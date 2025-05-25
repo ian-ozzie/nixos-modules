@@ -6,6 +6,7 @@
     ./lastplace.nix
     ./motion.nix
     ./rainbow.nix
+    ./spaceless.nix
     ./statusline.nix
     ./surround.nix
     ./tabstop.nix
