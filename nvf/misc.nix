@@ -6,5 +6,11 @@
 
     vim.api.nvim_create_autocmd('InsertEnter', { command = [[set norelativenumber]] })
     vim.api.nvim_create_autocmd('InsertLeave', { command = [[set relativenumber]] })
+
+    vim.api.nvim_create_autocmd({ "CursorHold", "InsertLeave" }, {
+      callback = function()
+        vim.diagnostic.open_float(nil, { focusable = false })
+      end,
+    })
   '';
 }
