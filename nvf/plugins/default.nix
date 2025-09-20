@@ -1,4 +1,7 @@
 {
+  pkgs,
+  ...
+}: {
   imports = [
     ./bigfile.nix
     ./git.nix
@@ -32,10 +35,24 @@
       enableTreesitter = true;
       enableExtraDiagnostics = true;
 
-      nix.enable = true;
       php.enable = true;
       ts.enable = true;
       tailwind.enable = true;
+
+      nix = {
+        enable = true;
+        extraDiagnostics.enable = true;
+        treesitter.enable = true;
+
+        lsp = {
+          package = pkgs.nixd;
+          server = "nixd";
+          options = {
+            formatting.command = [ "nixfmt" ];
+            nixpkgs.expr = "import <nixpkgs> { }";
+          };
+        };
+      };
     };
 
     lsp = {
