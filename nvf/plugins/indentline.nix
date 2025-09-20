@@ -9,8 +9,8 @@
       src = pkgs.fetchFromGitHub {
         owner = "nvimdev";
         repo = "indentmini.nvim";
-        rev = "59c2be5387e3a3308bb43f07e7e39fde0628bd4d";
-        hash = "sha256-RtNPlILvlEyIFfDK8NTq8LPZR5vIl6uBxeE3vftUS6g=";
+        rev = "0dc4bc2b3fc763420793e748b672292bc43ee722";
+        hash = "sha256-iMQn9eJuwThatTg9aTKhgHQaBc1NV4h/6gGt+fhZG9k=";
       };
     };
 
