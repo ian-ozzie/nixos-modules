@@ -72,5 +72,8 @@
 
     # Allow cursor to move beyond the last character on a line
     virtualedit = "onemore";
+
+    # Enable ShaDa
+    shada = "!,'300,<50,s10,h";
   };
 }

@@ -26,18 +26,18 @@
 
     git = {
       enable = true;
-      gitsigns.enable = true;
       gitsigns.codeActions.enable = false; # throws an annoying debug message
+      gitsigns.enable = true;
     };
 
     languages = {
+      enableExtraDiagnostics = true;
       enableFormat = false;
       enableTreesitter = true;
-      enableExtraDiagnostics = true;
 
       php.enable = true;
-      ts.enable = true;
       tailwind.enable = true;
+      ts.enable = true;
 
       nix = {
         enable = true;
@@ -47,6 +47,7 @@
         lsp = {
           package = pkgs.nixd;
           server = "nixd";
+
           options = {
             formatting.command = [ "nixfmt" ];
             nixpkgs.expr = "import <nixpkgs> { }";
@@ -57,15 +58,22 @@
 
     lsp = {
       enable = true;
-
       formatOnSave = false;
-      lspkind.enable = false;
+      inlayHints.enable = true;
       lightbulb.enable = false;
-      lspsaga.enable = false;
-      trouble.enable = true;
       lspSignature.enable = true;
-      otter-nvim.enable = false;
+      lspkind.enable = false;
+      lspsaga.enable = false;
       nvim-docs-view.enable = false;
+      otter-nvim.enable = false;
+
+      trouble = {
+        enable = true;
+
+        setupOpts = {
+          auto_close = true;
+        };
+      };
     };
 
     notes = {
@@ -73,6 +81,8 @@
     };
 
     ui = {
+      illuminate.enable = true;
+
       smartcolumn = {
         enable = true;
         setupOpts.colorcolumn = [ "80" "120" ];
@@ -81,6 +91,21 @@
 
     utility = {
       ccc.enable = true;
+      yanky-nvim.enable = true;
+
+      images.image-nvim = {
+        enable = true;
+        setupOpts.backend = "kitty";
+      };
+
+      nvim-biscuits = {
+        enable = true;
+        setupOpts.cursor_line_only = true;
+      };
+    };
+
+    visuals = {
+      highlight-undo.enable = true;
     };
   };
 }
