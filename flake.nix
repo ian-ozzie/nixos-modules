@@ -23,5 +23,9 @@
       nvf = nvf.nixosModules.default;
       nvfConfig = import ./nvf;
     };
+
+    nixosModules = {
+      users = import ./users;
+    };
   };
 }
